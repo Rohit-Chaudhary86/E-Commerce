@@ -29,7 +29,7 @@ function Checkout() {
 
       <div className="checkout-grid">
         <div className="order-summary">
-          {/* Cart Item 1 */}
+          
           <div className="cart-item-container">
             <div className="delivery-date">Delivery date: Tuesday, June 21</div>
 
