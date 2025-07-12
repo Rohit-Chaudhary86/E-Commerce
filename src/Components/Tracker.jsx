@@ -1,6 +1,6 @@
 import React from 'react'
 import './tracking.css'
-import Header from './Header'
+import Header from '../components2/Header'
 function Tracker() {
   return (
     <>

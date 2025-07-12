@@ -1,7 +1,7 @@
 import React from 'react'
-import './header.css'
+
 import './HomePage.css';
-import Header from './Header';
+import Header from '../components2/Header';
 function HomePage() {
   return (
     <>

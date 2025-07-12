@@ -1,16 +1,25 @@
 import React from "react";
 import founderImg from "../assets/founderImg.png";
+import { useNavigate } from "react-router";
 
  //Image issue is need to be fixed here
 
 function Founder() {
+  const navigate=useNavigate();
   return (
+    <>
+    <button onClick={() => navigate('/')}
+  className="radius-20"
+>
+  Home
+</button>
     <div className="bg-gray-100 px-4 py-8">
       <div className="mx-auto flex flex-col md:flex-row max-w-5xl shadow-lg rounded-lg overflow-hidden bg-white">
        
         <div className="md:w-1/2 w-full flex items-center justify-center bg-gray-200 p-6">
           
         </div>
+        
 
      
         <div className="md:w-1/2 w-full p-8 flex flex-col justify-center">
@@ -41,8 +50,11 @@ function Founder() {
           </ul>
         </div>
       </div>
+      
     </div>
+    </>
   );
+
 }
 
 export default Founder;
