@@ -6,19 +6,27 @@ import './HomePage.css';
 import Header from '../components2/Header';
 function HomePage() {
    const[products,setProducts]=useState([]);
+   const[cart,setCart]=useState([])
   useEffect(()=>{
    
       axios.get("http://localhost:3000/api/products")
     .then((response)=>{
+      console.log(response)
       setProducts(response.data)
       });
+
+      axios.get("http://localhost:3000/api/cart-items")
+       .then((response)=>{
+         console.log(response.data)
+         setCart(response.data)
+       })
   },[])
  
   return (
     
       
       <div className="home-page">
-        <Header />
+        <Header  cart={cart}/>
         <div className="products-grid">
           {products.map((product) => {
             return (

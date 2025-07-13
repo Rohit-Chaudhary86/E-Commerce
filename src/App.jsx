@@ -2,7 +2,7 @@ import './App.css'
 
 import Checkout from './Components/Checkout';
 import Founder from './Components/Founder';
-import HomePage from './Components/homePage'
+import HomePage from './Components/HomePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Orders from './Components/Orders';
 import Tracker from './Components/Tracker';
