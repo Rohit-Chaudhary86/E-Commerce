@@ -2,6 +2,7 @@ import React from "react";
 
 import "./checkout-header.css";
 import "./checkout.css";
+import { Link } from "react-router";
 
 function Checkout() {
   return (
@@ -9,10 +10,10 @@ function Checkout() {
       <div className="checkout-header">
         <div className="header-content">
           <div className="checkout-header-left-section">
-            <a href="/">
+            <Link to="/">
               <img className="logo" src="/images/logo.png" alt="logo" />
               <img className="mobile-logo" src="/images/mobile-logo.png" alt="mobile logo" />
-            </a>
+            </Link>
           </div>
 
           <div className="checkout-header-middle-section">
