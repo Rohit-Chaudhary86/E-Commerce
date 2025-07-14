@@ -155,3 +155,46 @@
   height: 34px;
   margin-top: 1px;
 }
+.founder-button {
+  padding: 10px 20px;
+  background-color: #2563eb; /* Blue */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.founder-button:hover {
+  background-color: #1e40af; /* Darker Blue on Hover */
+  transform: translateY(-2px);
+}
+
+.founder-button:active {
+  transform: translateY(0);
+  background-color: #1d4ed8; /* Slightly different shade on click */
+}
+.centered-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh; /* Full viewport height */
+  background: #f3f4f6; /* Light background */
+}
+
+.founder-button {
+  padding: 12px 24px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.founder-button:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
