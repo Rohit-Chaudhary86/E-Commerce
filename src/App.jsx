@@ -1,8 +1,8 @@
 import './App.css'
 import axios from 'axios' 
-import Checkout from './Components/Checkout';
+import Checkout from './Components/Checkout/Checkout';
 import Founder from './Components/Founder';
-import HomePage from './Components/HomePage';
+import HomePage from './Components/Home/HomePage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Orders from './Components/Orders';
 import Tracker from './Components/Tracker';

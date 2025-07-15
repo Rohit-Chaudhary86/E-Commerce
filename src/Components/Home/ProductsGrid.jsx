@@ -1,32 +1,9 @@
 import React from 'react'
-import axios from 'axios';
-import { useEffect,useState ,} from 'react';
-import './HomePage.css';
-import { formatMoney } from '../utils/Money';
-import Header from '../components2/Header';
-import { useNavigate } from 'react-router';
-function HomePage({cart}) {
-   const[products,setProducts]=useState([]);
-   
-  useEffect(()=>{
-      axios.get("/api/products")
-    .then((response)=>{
-      console.log(response)
-      setProducts(response.data)
-      });
+import { formatMoney } from '../../utils/Money';
 
-  },[])
-  const navigate=useNavigate();
-  const handleClick=()=>{
-    navigate("/founder")
-  }
- 
+export function ProductsGrid({products}) {
   return (
-    
-      
-      <div className="home-page">
-        <Header  cart={cart}/>
-        <div className="products-grid">
+    <div className="products-grid">
           {products.map((product) => {
             return (
               
@@ -80,12 +57,6 @@ function HomePage({cart}) {
           })}
           
         </div>
-        <div className='centered-button-container'>
-        <button onClick={handleClick} className='founder-button' >Founder</button>
-        </div>
-      </div>
-    
-  );
+  )
 }
 
-export default HomePage
