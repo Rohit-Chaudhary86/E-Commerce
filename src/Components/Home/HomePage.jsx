@@ -5,16 +5,15 @@ import './HomePage.css';
 import Header from '../../components2/Header';
 import { useNavigate } from 'react-router';
 import { ProductsGrid } from './ProductsGrid';
-function HomePage({cart}) {
+function HomePage({cart,loadCart}) {
    const[products,setProducts]=useState([]);
    
   useEffect(()=>{
-      axios.get("/api/products")
-    .then((response)=>{
-      console.log(response)
-      setProducts(response.data)
-      });
-
+     async function fetchProducts(){
+      const response= await axios.get("/api/products")
+       setProducts(response.data)
+     }
+     fetchProducts()
   },[])
   const navigate=useNavigate();
   const handleClick=()=>{
@@ -23,7 +22,7 @@ function HomePage({cart}) {
   return (
       <div className="home-page">
         <Header  cart={cart}/>
-        <ProductsGrid products={products}/>
+        <ProductsGrid products={products} loadCart={loadCart}/>
         <div className='centered-button-container'>
         <button onClick={handleClick} className='founder-button' >Founder</button>
         </div>

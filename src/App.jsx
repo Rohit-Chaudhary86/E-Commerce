@@ -9,19 +9,19 @@ import Tracker from './Components/Tracker';
 import {useState, useEffect} from "react"
 function App() {
    const[cart,setCart]=useState([])
+   async function loadCart(){
+     const response= await axios.get("/api/cart-items?expand=product") /* ?expand=product its a query parameter it lets us add additional info to our request */
+     setCart(response.data)
+    }  
   useEffect(()=>{
-     axios.get("/api/cart-items?expand=product")   /* ?expand=product its a query parameter it lets us add additional info to our request */
-       .then((response)=>{
-         console.log(response.data)
-         setCart(response.data)
-       })
+    
+      loadCart()
   },[])
    return (
-    
     <>
     <BrowserRouter>
     <Routes>
-       <Route path="/" element={<HomePage cart={cart} /> }/>
+       <Route path="/" element={<HomePage cart={cart} loadCart={loadCart}/> }/>
        <Route path="/Founder" element={<Founder/>} />
        <Route path="/Checkout" element={<Checkout cart={cart}/>}/>
        <Route path="/orders" element={<Orders cart={cart}/>} />
