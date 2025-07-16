@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Orders from './Components/Orders';
 import Tracker from './Components/Tracker';
 import {useState, useEffect} from "react"
+import OrderComplete from './Components/OrderComplete/OrderComplete'
 function App() {
    const[cart,setCart]=useState([])
    async function loadCart(){
@@ -26,6 +27,7 @@ function App() {
        <Route path="/Checkout" element={<Checkout cart={cart} loadCart={loadCart}/>}/>
        <Route path="/orders" element={<Orders cart={cart}/>} />
        <Route path="/track" element={<Tracker/>} />
+       <Route path='/order-placed' element={<OrderComplete/>} />
     </Routes>
     </BrowserRouter>
     </>

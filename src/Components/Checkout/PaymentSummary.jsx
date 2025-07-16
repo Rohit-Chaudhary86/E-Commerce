@@ -1,9 +1,13 @@
 import React from 'react'
 import { formatMoney } from '../../utils/Money'
+import { useNavigate } from 'react-router'
 
 
 export function PaymentSummary({paymentSummary}) {
-  
+    const navigate=useNavigate();
+   const handlePlaceOrder=async()=>{
+    navigate('/order-placed');
+   }
   return (
     <div className="payment-summary">
           <div className="payment-summary-title">Payment Summary</div>
@@ -29,7 +33,9 @@ export function PaymentSummary({paymentSummary}) {
             <div>Order total:</div>
             <div className="payment-summary-money">{formatMoney(paymentSummary.totalCostCents)}</div>
           </div>
-          <button className="place-order-button button-primary">
+          <button className="place-order-button button-primary"
+           onClick={handlePlaceOrder} // do this code after lunch
+          >
             Place your order
           </button>
           </>
@@ -37,4 +43,5 @@ export function PaymentSummary({paymentSummary}) {
         </div>
   )
 }
+
 
